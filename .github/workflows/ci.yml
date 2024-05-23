@@ -28,10 +28,10 @@ jobs:
       - run: npm ci
 
       - name: Lint
-        run: npm run lint
+        run: nx run lint
 
       - name: Unit Test
-        run: npm test
+        run: nx test
 
       - name: Build App
-        run: npm run build
+        run: nx run build
