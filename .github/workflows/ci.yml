@@ -27,11 +27,15 @@ jobs:
       # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
       - run: npm ci
 
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: npx nx affected -t lint test build e2e-ci
+
       - name: Lint
-        run: nx run lint
+        run: npx nx run lint
 
       - name: Unit Test
-        run: nx test
+        run: npx nx test
 
       - name: Build App
-        run: nx run build
+        run: npx nx run build
