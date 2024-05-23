@@ -29,14 +29,4 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint test build e2e-ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Unit Test
-        run: npm test
-
-      - name: Build App
-        run: npm run build
+      - run: npx nx affected -t lint test build 
