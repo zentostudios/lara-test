@@ -883,7 +883,7 @@ nx affected:e2e</pre>
           </details>
         </div>
         <p id="love">
-          Carefully crafted with
+          Carefully crafted by Space Aliens with
           <svg
             fill="currentColor"
             stroke="none"
