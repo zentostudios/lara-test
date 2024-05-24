@@ -1,4 +1,4 @@
-name: Merge Queue
+name: Merge Queue Tasks
 on:
   merge_group:
 
@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  main:
+  merge_queue_verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
