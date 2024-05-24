@@ -1,6 +1,6 @@
 name: CI
 on:
-  pull_request:
+  workflow_dispatch:
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
@@ -26,8 +26,3 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - run: npx nx affected -t lint test build 
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - run: npx nx affected -t lint
