@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  pull-request-merged:
+  post_merge_verify:
     if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
