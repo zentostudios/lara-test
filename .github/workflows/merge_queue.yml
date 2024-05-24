@@ -1,6 +1,6 @@
 name: Merge Queue
 on:
-  merge_queue:
+  merge_group:
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
@@ -25,4 +25,5 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
+      - run: echo "Run Merge Group Quality Checks"
       - run: npx nx affected -t lint test build 
