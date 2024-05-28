@@ -1,6 +1,7 @@
 name: Pull Request Open
 on:
   pull_request:
+  merge_group:
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
