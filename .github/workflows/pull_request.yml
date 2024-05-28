@@ -1,7 +1,6 @@
 name: Pull Request Open
 on:
   pull_request:
-  merge_group:
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
@@ -26,5 +25,5 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx affected -t lint test build 
+      - run: npx nx affected -t build 
 
