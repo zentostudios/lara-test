@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lara-test/rabbits": ["libs/rabbits/src/index.ts"]
+      "@lara-test/rabbits": ["libs/rabbits/src/index.ts"],
+      "@lara-test/cats": ["libs/cats/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
