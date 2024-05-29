@@ -28,4 +28,3 @@ jobs:
       - run: echo "in the pull request step"
 
       - run: npx nx affected -t lint 
-
