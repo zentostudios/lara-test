@@ -1,7 +1,9 @@
 name: Merge Queue
 on:
   pull_request:
+    types: [enqueued]
   merge_group:
+    types: [checks_requested]
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
@@ -9,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  pull_request_verify:
+  merge_group_verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -1,9 +1,6 @@
 name: Post Merge
 on:
-  pull_request:
-    branches: 
-      - main
-    types: [closed]
+  workflow_dispatch
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
