@@ -16,6 +16,10 @@ describe('PetsComponent', () => {
   });
 
   it('should create', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
     expect(component).toBeTruthy();
+    expect(compiled.querySelector('p')?.textContent).toContain(
+      'Wrong thing'
+    );
   });
 });
