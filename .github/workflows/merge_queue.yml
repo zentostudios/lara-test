@@ -9,6 +9,46 @@ permissions:
   contents: read
 
 jobs:
+  merge_queue_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+      # This line enables distribution
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+      - run: npm ci
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: echo "in the pull request step"
+
+      - run: npx nx affected -t lint 
+  merge_queue_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+      # This line enables distribution
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+      - run: npm ci
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: echo "in the pull request step"
+
+      - run: npx nx affected -t test 
   pull_request_verify:
     runs-on: ubuntu-latest
     steps:
