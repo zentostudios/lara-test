@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  merge_group_verify:
+  pull_request_verify:
     if: github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     steps:
