@@ -2,11 +2,22 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { PetsService } from './services/pets.service';
 
 describe('AppComponent', () => {
+  const pets = 'pets';
+  const mockPetsService = {
+    getPets: jest.fn().mockReturnValue(pets)
+  }
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent, NxWelcomeComponent, RouterTestingModule],
+      providers: [
+        {
+          provide: PetsService,
+          useValue: mockPetsService
+        }
+      ]
     }).compileComponents();
   });
 
@@ -17,6 +28,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain(
       'Welcome merge-queues'
     );
+    expect(mockPetsService.getPets).toHaveBeenCalled();
   });
 
   it(`should have as title 'merge-queues'`, () => {
