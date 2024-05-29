@@ -1,6 +1,7 @@
 name: Pull Request Open
 on:
   pull_request:
+    types: [opened, reopened, edited]
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
