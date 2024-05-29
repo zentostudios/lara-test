@@ -1,9 +1,7 @@
 name: Merge Queue
 on:
-  pull_request:
-    types: [opened, reopened, edited]
-  merge_group:
-    types: [checks_requested]
+  pull_request
+  merge_group
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
@@ -11,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  pull_request_verify:
+  merge_group_verify:
     if: github.event_name == 'merge_group'
     runs-on: ubuntu-latest
     steps:
