@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PetPipe implements PipeTransform {
   transform(value: unknown, ...args: unknown[]): unknown {
-    return 'you are a pet';
+    return 'you are a pet, for reals';
   }
 }
