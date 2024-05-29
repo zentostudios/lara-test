@@ -8,4 +8,8 @@ export class PetsService {
   constructor() { 
     console.log('in constructor')
   }
+
+  getPets() {
+    return 'pets';
+  }
 }
