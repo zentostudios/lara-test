@@ -1,7 +1,7 @@
 name: Merge Queue
 on:
-  pull_request
-  merge_group
+  pull_request:
+  merge_group:
 
 # Needed for nx-set-shas when run on the main branch
 permissions:
