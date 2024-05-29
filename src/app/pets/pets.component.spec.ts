@@ -19,7 +19,7 @@ describe('PetsComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(component).toBeTruthy();
     expect(compiled.querySelector('p')?.textContent).toContain(
-      'Wrong thing'
+      'Wrong thing for real'
     );
   });
 });
