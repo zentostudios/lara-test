@@ -25,5 +25,7 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
+      - run: echo "in the pull request step"
+
       - run: npx nx affected -t lint 
 

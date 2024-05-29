@@ -1,7 +1,5 @@
 name: Merge Queue
 on:
-  pull_request:
-    types: [enqueued]
   merge_group:
     types: [checks_requested]
 
@@ -11,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  merge_group_verify:
+  pull_request_verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,6 +25,8 @@ jobs:
       - run: npm ci
 
       - uses: nrwl/nx-set-shas@v4
+
+      - run: echo "in the merge queue"
 
       - run: npx nx affected -t lint test build 
 
