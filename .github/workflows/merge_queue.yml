@@ -7,8 +7,14 @@ on:
 permissions:
   actions: read
   contents: read
+  pull_requests: read
+  statuses: read
 
 jobs:
+  say_yes:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "YES"
   pull_request_verify:
     if: github.event_name == 'merge_group'
     runs-on: ubuntu-latest
